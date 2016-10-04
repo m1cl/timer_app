@@ -1,0 +1,44 @@
+const TimerTrashButton = React.createClass({
+    getInitialState: function () {
+        return {
+            isEntered: true,
+        };
+    },
+    render: function () {
+        if(this.state.isEntered) {
+            return (
+                    <span className='right floated trash icon'
+                        onClick={this.handleTrashClick} 
+                    >
+                        <i className='trash icon'></i>
+                    </span>
+            );
+        }
+        else {
+            return (<div></div>)
+        }
+    }
+});
+
+const TimerEditButton = React.createClass({
+    getInitialState: function () {
+        return {
+            isEntered: true,
+        };
+    },
+    render: function () {
+        if(this.state.isEntered) {
+            return (
+                    <span 
+                        className='right floated edit icon'
+                        onClick={this.props.onEditClick}  
+                    >
+                        <i className='edit icon'></i>
+                    </span>
+            );
+        }
+        else {
+            return (<div></div>)
+        }
+    }
+});
